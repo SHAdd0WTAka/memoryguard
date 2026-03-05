@@ -1,0 +1,35 @@
+name: Simple Test
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install package
+      run: |
+        pip install psutil
+        pip install -e .
+    
+    - name: Test import
+      run: |
+        python -c "from memoryguard import MemoryGuard; print('✅ Import successful')"
+    
+    - name: Test basic functionality
+      run: |
+        python -c "
+from memoryguard import MemoryGuard
+guard = MemoryGuard()
+guard.check_memory('test')
+print('✅ Basic functionality works')
+"
