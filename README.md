@@ -2,8 +2,12 @@
 
 > **Like Lego for your Code** - Modular Python Memory Monitoring & Valgrind Integration
 
+[![CI](https://github.com/SHAdd0WTAka/memoryguard/actions/workflows/ci.yml/badge.svg)](https://github.com/SHAdd0WTAka/memoryguard/actions/workflows/ci.yml)
+[![Coverage](https://img.shields.io/badge/coverage-80%25-brightgreen.svg)](./coverage.svg)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PyPI](https://img.shields.io/badge/pypi-v1.0.0-blue.svg)](https://pypi.org/project/memoryguard/)
+[![Docker](https://img.shields.io/badge/docker-ghcr.io-blue.svg)](https://ghcr.io/shadd0wtaka/memoryguard)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 Drop-in memory monitoring for any Python project. Track memory usage, detect leaks, profile tools, and integrate with Valgrind - all with minimal overhead.
