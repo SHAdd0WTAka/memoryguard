@@ -3,6 +3,7 @@
 > **Like Lego for your Code** - Modular Python Memory Monitoring & Valgrind Integration
 
 [![Tests](https://github.com/SHAdd0WTAka/memoryguard/actions/workflows/tests.yml/badge.svg)](https://github.com/SHAdd0WTAka/memoryguard/actions/workflows/tests.yml)
+[![Coverage](https://github.com/SHAdd0WTAka/memoryguard/actions/workflows/coverage.yml/badge.svg)](https://github.com/SHAdd0WTAka/memoryguard/actions/workflows/coverage.yml)
 [![Docker](https://github.com/SHAdd0WTAka/memoryguard/actions/workflows/docker.yml/badge.svg)](https://github.com/SHAdd0WTAka/memoryguard/actions/workflows/docker.yml)
 [![PyPI](https://img.shields.io/pypi/v/memoryguard.svg)](https://pypi.org/project/memoryguard/)
 [![Python](https://img.shields.io/pypi/pyversions/memoryguard.svg)](https://pypi.org/project/memoryguard/)
