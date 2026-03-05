@@ -1,0 +1,31 @@
+name: Smoke Test
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install psutil
+      run: pip install psutil
+    
+    - name: Test import core
+      run: |
+        python -c "
+import sys
+sys.path.insert(0, '.')
+from memoryguard.core import MemoryGuard
+print('✅ Core import works')
+g = MemoryGuard()
+g.check_memory('test')
+print('✅ MemoryGuard works')
+"
