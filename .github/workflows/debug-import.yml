@@ -1,0 +1,30 @@
+name: Debug Import
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install psutil
+      - run: python -c "import psutil; print('psutil:', psutil.__version__)"
+      - run: python -c "import sys; print('Python:', sys.version)"
+      - run: python -c "import sys; sys.path.insert(0, '.'); print('Path:', sys.path[:3])"
+      - run: |
+          python -c "
+import sys
+sys.path.insert(0, '.')
+try:
+    from memoryguard.core import MemoryGuard
+    print('✅ core import works')
+except Exception as e:
+    print('❌ core import failed:', e)
+    import traceback
+    traceback.print_exc()
+"
