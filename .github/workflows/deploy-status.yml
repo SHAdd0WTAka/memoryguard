@@ -1,0 +1,30 @@
+name: Deployment Status
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  create-deployment:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Create GitHub Deployment
+      uses: altinukshini/deployment-action@master
+      id: deployment
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        environment: production
+        initial_status: success
+        description: "Deployed to PyPI and Docker Hub"
+    
+    - name: Update deployment status (success)
+      uses: altinukshini/deployment-status@master
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        state: success
+        deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+        environment-url: https://pypi.org/project/memoryguard/
+        description: "Successfully deployed to PyPI"
