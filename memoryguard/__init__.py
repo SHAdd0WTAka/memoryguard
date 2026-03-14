@@ -23,7 +23,7 @@ Quick Start:
 For more info: https://github.com/SHAdd0WTAka/memoryguard
 """
 
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 __author__ = "Security Team"
 __license__ = "MIT"
 

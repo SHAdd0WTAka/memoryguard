@@ -122,6 +122,12 @@ If you have `rich` installed:
 pip install memoryguard[dashboard]
 ```
 
+### Live Dashboard Preview
+
+![MemoryGuard Dashboard](docs/dashboard_screenshot.png)
+
+*Live memory monitoring with top processes, RSS/VMS usage, and memory percentage*
+
 ```python
 from memoryguard import MemoryDashboard
 
